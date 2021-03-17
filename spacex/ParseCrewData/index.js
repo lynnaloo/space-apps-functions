@@ -22,12 +22,12 @@ module.exports = async function (context, req) {
         });
 
         filteredCrew.push({
-          "launches": filteredLaunches,
           "name": member.name,
           "agency": member.agency,
           "image": member.image,
           "wikipedia": member.wikipedia,
-          "status": member.status
+          "status": member.status,
+          "launches": filteredLaunches
         });
       });
 
