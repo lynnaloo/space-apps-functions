@@ -1,0 +1,311 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "getCrew",
+    "version": "1.0",
+    "description": "Custom connector to Azure Logic App workflow to get SpaceX crew."
+  },
+  "host": "spacex-apis.azure-api.net",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/crew": {
+      "get": {
+        "description": "Trigger a run of the logic app.",
+        "operationId": "manual-invoke",
+        "summary": "crew",
+        "parameters": [
+          {
+            "name": "request-manual",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/request-manual"
+            },
+            "description": "The request body."
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "The Logic App Response.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "crew": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "description": "name"
+                      },
+                      "agency": {
+                        "type": "string",
+                        "description": "agency"
+                      },
+                      "image": {
+                        "type": "string",
+                        "description": "image"
+                      },
+                      "wikipedia": {
+                        "type": "string",
+                        "description": "wikipedia"
+                      },
+                      "status": {
+                        "type": "string",
+                        "description": "status"
+                      },
+                      "launches": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "patch": {
+                              "type": "string",
+                              "description": "patch"
+                            },
+                            "webcast": {
+                              "type": "string",
+                              "description": "webcast"
+                            },
+                            "details": {
+                              "type": "string",
+                              "description": "details"
+                            },
+                            "failures": {
+                              "type": "integer",
+                              "format": "int32",
+                              "description": "failures"
+                            },
+                            "flight_number": {
+                              "type": "integer",
+                              "format": "int32",
+                              "description": "flight_number"
+                            },
+                            "launch_name": {
+                              "type": "string",
+                              "description": "launch_name"
+                            },
+                            "launch_date": {
+                              "type": "string",
+                              "description": "launch_date"
+                            },
+                            "payloads": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "dragon": {
+                                    "type": "object",
+                                    "properties": {
+                                      "capsule": {
+                                        "type": "string",
+                                        "description": "capsule"
+                                      },
+                                      "mass_returned_kg": {
+                                        "type": "string",
+                                        "description": "mass_returned_kg"
+                                      },
+                                      "mass_returned_lbs": {
+                                        "type": "string",
+                                        "description": "mass_returned_lbs"
+                                      },
+                                      "flight_time_sec": {
+                                        "type": "string",
+                                        "description": "flight_time_sec"
+                                      },
+                                      "manifest": {
+                                        "type": "string",
+                                        "description": "manifest"
+                                      },
+                                      "water_landing": {
+                                        "type": "string",
+                                        "description": "water_landing"
+                                      },
+                                      "land_landing": {
+                                        "type": "string",
+                                        "description": "land_landing"
+                                      }
+                                    },
+                                    "description": "dragon"
+                                  },
+                                  "name": {
+                                    "type": "string",
+                                    "description": "name"
+                                  },
+                                  "type": {
+                                    "type": "string",
+                                    "description": "type"
+                                  },
+                                  "reused": {
+                                    "type": "boolean",
+                                    "description": "reused"
+                                  },
+                                  "launch": {
+                                    "type": "string",
+                                    "description": "launch"
+                                  },
+                                  "customers": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "description": "customers"
+                                  },
+                                  "norad_ids": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "integer",
+                                      "format": "int32"
+                                    },
+                                    "description": "norad_ids"
+                                  },
+                                  "nationalities": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "description": "nationalities"
+                                  },
+                                  "manufacturers": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "description": "manufacturers"
+                                  },
+                                  "mass_kg": {
+                                    "type": "string",
+                                    "description": "mass_kg"
+                                  },
+                                  "mass_lbs": {
+                                    "type": "string",
+                                    "description": "mass_lbs"
+                                  },
+                                  "orbit": {
+                                    "type": "string",
+                                    "description": "orbit"
+                                  },
+                                  "reference_system": {
+                                    "type": "string",
+                                    "description": "reference_system"
+                                  },
+                                  "regime": {
+                                    "type": "string",
+                                    "description": "regime"
+                                  },
+                                  "longitude": {
+                                    "type": "string",
+                                    "description": "longitude"
+                                  },
+                                  "semi_major_axis_km": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "semi_major_axis_km"
+                                  },
+                                  "eccentricity": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "eccentricity"
+                                  },
+                                  "periapsis_km": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "periapsis_km"
+                                  },
+                                  "apoapsis_km": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "apoapsis_km"
+                                  },
+                                  "inclination_deg": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "inclination_deg"
+                                  },
+                                  "period_min": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "period_min"
+                                  },
+                                  "lifespan_years": {
+                                    "type": "string",
+                                    "description": "lifespan_years"
+                                  },
+                                  "epoch": {
+                                    "type": "string",
+                                    "description": "epoch"
+                                  },
+                                  "mean_motion": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "mean_motion"
+                                  },
+                                  "raan": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "raan"
+                                  },
+                                  "arg_of_pericenter": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "arg_of_pericenter"
+                                  },
+                                  "mean_anomaly": {
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "mean_anomaly"
+                                  },
+                                  "id": {
+                                    "type": "string",
+                                    "description": "id"
+                                  }
+                                }
+                              },
+                              "description": "payloads"
+                            }
+                          }
+                        },
+                        "description": "launches"
+                      }
+                    }
+                  },
+                  "description": "crew"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "The Logic App Response.",
+            "schema": {
+              "$ref": "#/definitions/ManualPathsInvokeGet500ApplicationJsonResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "request-manual": {},
+    "ManualPathsInvokeGet200ApplicationJsonResponse": {
+      "type": "object"
+    },
+    "ManualPathsInvokeGet500ApplicationJsonResponse": {
+      "type": "object"
+    }
+  },
+  "parameters": {},
+  "responses": {},
+  "tags": [],
+  "securityDefinitions": {}
+}
